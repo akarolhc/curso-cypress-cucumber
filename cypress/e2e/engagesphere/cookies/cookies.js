@@ -1,4 +1,9 @@
-import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
+import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor'
+
+Given('I access the EngageSphere app without any cookies set', () => {
+  cy.clearCookies()
+  cy.visit('https://engage-sphere.vercel.app/')
+})
 
 Given('I see the cookies consent Banner', () => {
   cy.get('[class^="CookieConsent_banner__"]').should('be.visible')
